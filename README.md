@@ -1,7 +1,7 @@
 
 ## RSWeb
 
-`/doorbell` is different from RSDoorBellServer and independent system.
+`/doorbell` is different from RSDoorBellServer, independent and legacy system.
 
 ### Fix here
 
