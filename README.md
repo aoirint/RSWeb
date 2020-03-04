@@ -3,6 +3,10 @@
 
 `/doorbell` is different from RSDoorBellServer, independent and legacy system.
 
+This is legacy system.
+
+TODO: replace with Modern server.
+
 ### Fix here
 
 #### /www/.htpasswd
