@@ -1,0 +1,21 @@
+RewriteEngine On
+RewriteBase /
+DirectoryIndex .ht
+
+RewriteCond %{HTTP_HOST} !localhost$
+RewriteCond %{HTTP_HOST} !###MY_DOMAIN###$
+RewriteRule .* - [F]
+
+SetEnvIf REDIRECT_HTTPS (.*) HTTPS=$1
+RewriteCond %{ENV:HTTPS} !on
+RewriteCond %{HTTP_HOST} !localhost$
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+AuthType Basic
+AuthName "Please enter your ID and password"
+AuthUserFile ###ROOT_DIR###/.htpasswd
+require user ###MY_USER###
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php [END,QSA]
